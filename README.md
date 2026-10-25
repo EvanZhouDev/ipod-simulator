@@ -1,5 +1,7 @@
 # ipod-simulator
 
+[Try it out](https://ipod-simulator.vercel.app/) | [NPM](https://www.npmjs.com/package/ipod-simulator)
+
 ![](/assets/ipod-og.png)
 
 - 🍎 React and HTML component for Apple's official iPod Simulator
