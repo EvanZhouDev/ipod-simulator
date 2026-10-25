@@ -1,6 +1,6 @@
 # ipod-simulator
 
-1000 songs in your app.
+![](/assets/ipod-og.png)
 
 - 🍎 React and HTML component for Apple's official iPod Simulator
 - 💿 Preset catalog of songs 1000+ songs
