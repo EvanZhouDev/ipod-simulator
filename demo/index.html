@@ -40,16 +40,19 @@
         <div class="code-examples">
         <div class="code-panel" id="react-panel" role="tabpanel" aria-labelledby="react-tab">
           <pre><code><span class="keyword">import</span> { IPod } <span class="keyword">from</span> <span class="string">"ipod-simulator/react"</span>;
-<span class="keyword">import type</span> { Song, Playlist } <span class="keyword">from</span> <span class="string">"ipod-simulator"</span>;
+<span class="keyword">import</span> {
+  defaultSongs, defaultPlaylists,
+  <span class="keyword">type</span> Song, <span class="keyword">type</span> Playlist,
+} <span class="keyword">from</span> <span class="string">"ipod-simulator"</span>;
 
-<span class="keyword">const</span> songs: <span class="type">Song</span>[] = [{
+<span class="keyword">const</span> songs: <span class="type">Song</span>[] = [...defaultSongs, {
   id: <span class="string">"my-song"</span>,
   name: <span class="string">"My song"</span>,
   artistName: <span class="string">"My artist"</span>,
   previewUrl: <span class="string">"/music/my-song.mp3"</span>,
 }];
 
-<span class="keyword">const</span> playlists: <span class="type">Playlist</span>[] = [{
+<span class="keyword">const</span> playlists: <span class="type">Playlist</span>[] = [...defaultPlaylists, {
   id: <span class="string">"favorites"</span>,
   name: <span class="string">"Favorites"</span>,
   songIds: [<span class="string">"my-song"</span>],
@@ -64,20 +67,18 @@
           <pre><code>&lt;<span class="type">ipod-simulator</span>&gt;&lt;/<span class="type">ipod-simulator</span>&gt;
 
 &lt;<span class="type">script</span> type=<span class="string">"module"</span>&gt;
-  <span class="keyword">import</span> { createIPod } <span class="keyword">from</span>
+  <span class="keyword">import</span> { createIPod, defaultSongs, defaultPlaylists } <span class="keyword">from</span>
     <span class="string">"https://cdn.jsdelivr.net/npm/ipod-simulator@latest/dist/index.js"</span>;
 
-  <span class="keyword">const</span> element = document.querySelector(
-    <span class="string">"ipod-simulator"</span>
-  );
+  <span class="keyword">const</span> element = document.querySelector(<span class="string">"ipod-simulator"</span>);
   <span class="keyword">const</span> ipod = <span class="keyword">await</span> createIPod(element, {
-    songs: [{
+    songs: [...defaultSongs, {
       id: <span class="string">"my-song"</span>,
       name: <span class="string">"My song"</span>,
       artistName: <span class="string">"My artist"</span>,
       previewUrl: <span class="string">"/music/my-song.mp3"</span>,
     }],
-    playlists: [{
+    playlists: [...defaultPlaylists, {
       id: <span class="string">"favorites"</span>,
       name: <span class="string">"Favorites"</span>,
       songIds: [<span class="string">"my-song"</span>],
