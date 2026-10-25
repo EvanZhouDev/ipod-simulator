@@ -1,0 +1,70 @@
+{
+	"name": "ipod-simulator",
+	"version": "0.1.0",
+	"description": "React and HTML component for Apple's official iPod Simulator.",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./react": {
+			"types": "./dist/react/index.d.ts",
+			"import": "./dist/react/index.js"
+		},
+		"./element": {
+			"types": "./dist/element/index.d.ts",
+			"import": "./dist/element/index.js"
+		},
+		"./assets/*": "./dist/includes/ipod/*"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsup",
+		"dev": "npm run build && node scripts/demo.mjs",
+		"test": "npm run build && node --test test/*.test.js",
+		"prepack": "npm run build"
+	},
+	"type": "module",
+	"peerDependencies": {
+		"react": ">=18"
+	},
+	"peerDependenciesMeta": {
+		"react": {
+			"optional": true
+		}
+	},
+	"devDependencies": {
+		"tsup": "^8.5.0",
+		"typescript": "^7.0.2"
+	},
+	"sideEffects": [
+		"./dist/element/index.js",
+		"./dist/includes/ipod/web-music-ipod.esm.js"
+	],
+	"engines": {
+		"node": ">=18.20"
+	},
+	"directories": {
+		"example": "demo"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/EvanZhouDev/ipod-simulator.git"
+	},
+	"keywords": [
+		"ipod",
+		"simulator",
+		"web-component",
+		"react",
+		"audio"
+	],
+	"author": "EvanZhouDev",
+	"bugs": {
+		"url": "https://github.com/EvanZhouDev/ipod-simulator/issues"
+	},
+	"homepage": "https://github.com/EvanZhouDev/ipod-simulator#readme"
+}
